@@ -21,7 +21,7 @@ export const TaskListProvider = ({children}) => {
       };
 
     return (
-        <TaskListContext.Provider value={{ taskLists, addTasks, removeTask  }}>
+        <TaskListContext.Provider value={{ taskLists, addTasks, removeTask }}>
             {children}
         </TaskListContext.Provider>
     );
