@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './EditTodo.css'
 
 export const EditTodoModal = ({ title, note }) => {
+
+    const [taskTitle, setTaskTitle] = useState("");
+    const [taskNotes, setTaskNotes] = useState("");
+
+    const handleSubmit = () => {
+
+        if (taskTitle && taskNotes) {
+            console.log(taskTitle)
+            console.log(taskNotes)
+            
+        }
+        else {
+            alert("Please fill in all fields");
+        }
+
+    }
 
     return (
         <>
@@ -12,10 +28,10 @@ export const EditTodoModal = ({ title, note }) => {
                 </div>
                 
                 <div className='todo-form flex column gap-10'>
-                    <input type="text" value={title} placeholder='Task Title...' />
-                    <textarea placeholder='Additional notes (optional)'>{note}</textarea>
+                    <input type="text" value={taskTitle} placeholder='Task Title...' onChange={(e) => setTaskTitle(e.target.value)} />
+                    <textarea value={taskNotes} placeholder='Additional notes (optional)' onChange={(e) => setTaskNotes(e.target.value)}></textarea>
                     <div className='flex flex-row gap-10'>
-                        <button className='bg-blue-500'>Save Changes</button>
+                        <button className='bg-blue-500' onClick={ handleSubmit }>Save Changes</button>
                         <button>Cancel</button>
                     </div>
                     

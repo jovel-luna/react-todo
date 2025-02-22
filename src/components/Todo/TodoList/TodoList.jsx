@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import { TodoDetailsModal } from '../TodoDetails/TodoDetails';
 
-function TodoList() {
+function TodoList({ taskLists }) {
   return (
-    <div>TodoList</div>
+    <>
+      {taskLists.map(task => (
+        <TodoDetailsModal title={task.title} note={task.notes} />
+      ))}
+    </>
   )
 }
 

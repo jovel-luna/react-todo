@@ -11,8 +11,8 @@ export const TodoDetailsModal = ({ title, note }) => {
                 </div>
     
                 <div className='todo-form flex column gap-10'>
-                    <input type="text" value={title} placeholder='Task Title...' />
-                    <textarea placeholder='Additional notes (optional)'>{note}</textarea>
+                    <input readOnly type="text" value={title} placeholder='Task Title...' />
+                    <textarea readOnly placeholder='Additional notes (optional)'>{note}</textarea>
                 </div>
             </div>
         </>
