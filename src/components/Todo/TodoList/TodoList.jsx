@@ -10,7 +10,7 @@ function TodoList({ indicatedSchedule }) {
     <>
       {taskLists.map(task => {
         if (indicatedSchedule === task.schedule) {
-          return <TodoDetailsModal key={task.id} title={task.title} schedule={task.schedule} note={task.notes} />;
+          return <TodoDetailsModal key={task.id} taskId={task.id} title={task.title} schedule={task.schedule} note={task.notes} />;
         }
         return null; 
       })}

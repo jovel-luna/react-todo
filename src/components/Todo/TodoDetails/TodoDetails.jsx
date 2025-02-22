@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './TodoDetails.css'
+import { TaskListContext } from '../../../context/TaskListContext';
 
-export const TodoDetailsModal = ({ title, schedule, note }) => {
+export const TodoDetailsModal = ({ taskId, title, schedule, note }) => {
+
+    const { removeTask } = useContext(TaskListContext);
+
+    const handleDeleteClick = () => {
+        removeTask(taskId);
+    }
 
     return (
         <>
@@ -14,6 +21,7 @@ export const TodoDetailsModal = ({ title, schedule, note }) => {
                     <input readOnly type="text" value={title} />
                     <input readOnly type="text" value={schedule} />
                     <textarea readOnly value={note}></textarea>
+                    <button onClick={ handleDeleteClick }>Delete Task</button>
                 </div>
             </div>
         </>

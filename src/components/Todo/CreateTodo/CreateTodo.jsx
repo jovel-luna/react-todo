@@ -35,7 +35,7 @@ export const CreateTodoModal = () => {
                 <div className='todo-form flex column gap-10'>
                     <input value={taskTitle} type="text" placeholder='Task Title...' onChange={(e) => setTaskTitle(e.target.value)} />
                     <select onChange={(e) => setTaskSchedule(e.target.value)}>
-                        <option value="" selected>Select Schedule</option>
+                        <option value="">Select Schedule</option>
                         <option value="Morning">Morning</option>
                         <option value="Afternoon">Afternoon</option>
                         <option value="Evening">Evening</option>
