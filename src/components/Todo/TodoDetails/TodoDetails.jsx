@@ -1,7 +1,7 @@
 import React from 'react';
 import './TodoDetails.css'
 
-export const TodoDetailsModal = ({ title, note }) => {
+export const TodoDetailsModal = ({ title, schedule, note }) => {
 
     return (
         <>
@@ -11,8 +11,9 @@ export const TodoDetailsModal = ({ title, note }) => {
                 </div>
     
                 <div className='todo-form flex column gap-10'>
-                    <input readOnly type="text" value={title} placeholder='Task Title...' />
-                    <textarea readOnly placeholder='Additional notes (optional)'>{note}</textarea>
+                    <input readOnly type="text" value={title} />
+                    <input readOnly type="text" value={schedule} />
+                    <textarea readOnly value={note}></textarea>
                 </div>
             </div>
         </>
